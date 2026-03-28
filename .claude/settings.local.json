@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -oP '\\\\.[^.]+$')",
+      "Bash(grep -oE '\\\\.[^.]+$')",
+      "Bash(grep -iE \"\\\\.\\(mp4|mov|avi|mkv\\)$\")",
+      "Bash(python organize_downloads.py)",
+      "Bash(py --version)",
+      "Bash(where python3:*)",
+      "Bash(where py:*)",
+      "Bash(python3 organize_downloads.py)",
+      "Read(//c/Users/Fouz/AppData/Local/Programs/**)",
+      "Read(//c/Users/Fouz/AppData/Local/Microsoft/WindowsApps//**)",
+      "Bash(\"/c/Users/Fouz/AppData/Local/Microsoft/WindowsApps/python3.exe\" --version)",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Users\\\\Fouz\\\\Desktop\\\\Images\\\\Photos-OMRA-Hajj' -ErrorAction SilentlyContinue | Select-Object Name, Length | Format-Table\")",
+      "Bash(powershell -Command \"if \\(Test-Path 'C:\\\\Users\\\\Fouz\\\\Desktop\\\\Images'\\) { Get-ChildItem 'C:\\\\Users\\\\Fouz\\\\Desktop\\\\Images' -Recurse | Select-Object FullName } else { Write-Host 'Not found' }\")",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Users\\\\Fouz\\\\Desktop\\\\' | Select-Object Name\")",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Users\\\\Fouz\\\\Pictures\\\\Screenshots\\\\' | Where-Object { \\\\$_.Name -like '*200952*' -or \\\\$_.Name -like '*15 fev*' -or \\\\$_.Name -like '*2026-02-15*' } | Select-Object FullName\")",
+      "Bash(powershell -Command \"\n\\\\$src = Get-ChildItem 'C:\\\\Users\\\\Fouz\\\\Pictures\\\\Screenshots\\\\' | Where-Object { \\\\$_.Name -like '*200952*' } | Select-Object -First 1\nif \\(\\\\$src\\) {\n  Copy-Item -LiteralPath \\\\$src.FullName -Destination 'C:\\\\Users\\\\Fouz\\\\Desktop\\\\ClaudeCode\\\\images\\\\checklist-valise.png' -Force\n  Write-Host 'OK:' \\\\$src.FullName\n}\")",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Users\\\\Fouz\\\\Desktop\\\\ClaudeCode\\\\images\\\\' | Select-Object Name, @{N='KB';E={[math]::Round\\(\\\\$_.Length/1KB\\)}}\")",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Users\\\\Fouz\\\\Pictures\\\\Images\\\\Photos-Personnelles\\\\' | Select-Object Name, @{N='KB';E={[math]::Round\\(\\\\$_.Length/1KB\\)}} | Format-Table\")",
+      "Bash(powershell -Command \"Get-ChildItem 'C:\\\\Users\\\\Fouz\\\\Pictures\\\\Images\\\\Photos-Personnelles\\\\' | Where-Object { \\\\$_.Name -like '*Whisk*' -or \\\\$_.Name -like '*kaaba*' -or \\\\$_.Name -like '*mecque*' -or \\\\$_.Name -like '*mecca*' -or \\\\$_.Name -like '*hajj*' -or \\\\$_.Name -like '*omra*' -or \\\\$_.Name -like '*Medine*' -or \\\\$_.Name -like '*nabawi*' -or \\\\$_.Name -like '*mosque*' -or \\\\$_.Name -like '*Gemini*' -or \\\\$_.Name -like '*Design*' -or \\\\$_.Name -like '*haram*' } | Select-Object Name, @{N='KB';E={[math]::Round\\(\\\\$_.Length/1KB\\)}}\")",
+      "Bash(powershell -Command \"Copy-Item -LiteralPath 'C:\\\\Users\\\\Fouz\\\\Pictures\\\\Images\\\\Photos-Personnelles\\\\Whisk_1fe539114a0ddf284eb4dad079963fdcdr.jpeg' -Destination 'C:\\\\Users\\\\Fouz\\\\Desktop\\\\ClaudeCode\\\\images\\\\kaaba-hero.jpg' -Force; Write-Host 'OK'\")",
+      "Bash(powershell -Command \"Select-String -Path 'C:\\\\Users\\\\Fouz\\\\Desktop\\\\ClaudeCode\\\\*.html' -Pattern '[0-9]+.*€|€.*[0-9]+|prix|tarif' -CaseSensitive:\\\\$false | Select-Object Filename, LineNumber, Line\")",
+      "WebSearch",
+      "WebFetch(domain:consultante-omra-hajj.com)",
+      "WebFetch(domain:www.chaimatravel.net)",
+      "Bash(powershell -Command \"Copy-Item -LiteralPath 'C:\\\\Users\\\\Fouz\\\\Pictures\\\\Images\\\\Photos-Personnelles\\\\Whisk_2c0e53f30fe41c4852a4c385dce2f8c8eg.png' -Destination 'C:\\\\Users\\\\Fouz\\\\Desktop\\\\ClaudeCode\\\\images\\\\fouziya-bureau.png'\")",
+      "Bash(cd:*)"
+    ]
+  }
+}
