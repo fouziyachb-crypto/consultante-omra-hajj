@@ -2161,7 +2161,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);
   border-color: rgba(201,168,76,.35);
+  text-decoration: none;
+  cursor: pointer;
 }
+a.episode-card { text-decoration: none; color: inherit; }
 
 .episode-num {
   font-family: var(--font-head);
