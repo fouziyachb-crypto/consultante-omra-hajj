@@ -2033,3 +2033,228 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .footer-bottom { flex-direction: column; align-items: center; text-align: center; }
   .footer-legal { flex-direction: column; gap: 8px; align-items: center; }
 }
+
+/* ── Tarifs ─────────────────────────────────────────────────────────────────── */
+.tarifs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.tarif-card {
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.tarif-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(201,168,76,.4);
+}
+
+.tarif-card--featured {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+  border-color: var(--gold);
+  transform: scale(1.04);
+  box-shadow: var(--shadow-lg);
+}
+.tarif-card--featured:hover { transform: scale(1.04) translateY(-6px); }
+.tarif-card--featured .tarif-name  { color: var(--white); }
+.tarif-card--featured .tarif-amount { color: var(--gold); }
+.tarif-card--featured .tarif-list li { color: rgba(255,255,255,.9); }
+
+.tarif-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--green-dark);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.tarif-icon {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+
+.tarif-name {
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 12px;
+}
+
+.tarif-price {
+  margin-bottom: 28px;
+}
+.tarif-amount {
+  font-family: var(--font-head);
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1;
+}
+
+.tarif-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 32px;
+  text-align: left;
+  width: 100%;
+}
+.tarif-list li {
+  font-size: .9rem;
+  color: var(--text-mid);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+
+.tarif-btn { width: 100%; justify-content: center; margin-top: auto; }
+
+@media (max-width: 900px) {
+  .tarifs-grid { grid-template-columns: 1fr; gap: 32px; }
+  .tarif-card--featured { transform: none; }
+  .tarif-card--featured:hover { transform: translateY(-6px); }
+}
+
+/* ── Omra en famille — Episodes grid ──────────────────────────────────────── */
+.episodes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.episode-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 20px;
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.episode-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(201,168,76,.35);
+}
+
+.episode-num {
+  font-family: var(--font-head);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  flex-shrink: 0;
+  min-width: 36px;
+}
+
+.episode-content {}
+.episode-theme {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold-dark);
+  margin-bottom: 6px;
+}
+.episode-accroche {
+  font-size: .9rem;
+  color: var(--text);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+/* Hero page Omra en famille */
+.famille-hero {
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+  padding: 140px 0 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.famille-hero::before {
+  content: '👨‍👩‍👧‍👦';
+  position: absolute;
+  top: 40px; right: 80px;
+  font-size: 8rem;
+  opacity: .06;
+  pointer-events: none;
+}
+.famille-hero .section-tag { margin-bottom: 20px; }
+.famille-hero h1 {
+  font-family: var(--font-head);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--white);
+  line-height: 1.2;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+.famille-hero p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,.8);
+  max-width: 620px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+.famille-hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.famille-stat {
+  text-align: center;
+  color: var(--white);
+}
+.famille-stat strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 2.2rem;
+  color: var(--gold);
+  line-height: 1;
+}
+.famille-stat span { font-size: .85rem; color: rgba(255,255,255,.7); }
+
+/* Nav lien actif (page courante) */
+.nav-link--active {
+  color: var(--gold) !important;
+  font-weight: 600;
+}
+
+/* Carte épisode final (Ep 21) */
+.episode-card--final {
+  border-color: rgba(201,168,76,.4);
+  background: var(--gold-pale);
+}
+.episode-card--final .episode-num { color: var(--gold-dark); }
+
+@media (max-width: 768px) {
+  .episodes-grid { grid-template-columns: 1fr; }
+  .tarifs-grid { grid-template-columns: 1fr; }
+}
