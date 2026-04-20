@@ -1780,6 +1780,85 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .blog-toc a { color: var(--green); font-weight: 500; }
 .blog-toc a:hover { color: var(--gold-dark); }
 
+/* ── Omra au féminin — Page dédiée ─────────────────────────────────────────── */
+.feminin-nav {
+  background: var(--green);
+  padding: 14px 0;
+  position: sticky;
+  top: 72px;
+  z-index: 100;
+  overflow-x: auto;
+}
+.feminin-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+.feminin-nav-link {
+  font-size: .84rem;
+  color: rgba(255,255,255,.8);
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+.feminin-nav-link:hover {
+  color: var(--gold);
+  background: rgba(255,255,255,.08);
+}
+
+.feminin-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.feminin-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--gold);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+.feminin-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+.feminin-card-icon {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+  line-height: 1;
+}
+.feminin-card h3 {
+  font-family: var(--font-head);
+  font-size: 1.1rem;
+  color: var(--green);
+  margin-bottom: 10px;
+}
+.feminin-card p {
+  font-size: .9rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+
+.feminin-cta-box {
+  background: var(--green-light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  text-align: center;
+}
+.feminin-cta-box p {
+  font-size: 1rem;
+  color: var(--text-mid);
+  margin-bottom: 20px;
+}
+
 /* ── Animations ─────────────────────────────────────────────────────────────── */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -2137,6 +2216,133 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .tarifs-grid { grid-template-columns: 1fr; gap: 32px; }
   .tarif-card--featured { transform: none; }
   .tarif-card--featured:hover { transform: translateY(-6px); }
+}
+
+/* ── Omra au féminin — Teaser compact ──────────────────────────────────────── */
+.section--femmes-teaser {
+  background: linear-gradient(135deg, var(--green-dark) 0%, #0d2d1a 100%);
+  position: relative;
+  overflow: hidden;
+}
+.section--femmes-teaser::before {
+  content: '🌸';
+  position: absolute;
+  font-size: 16rem;
+  opacity: .04;
+  right: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.femmes-teaser-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.femmes-teaser-icon {
+  font-size: 5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.femmes-teaser-text .section-tag {
+  margin-bottom: 16px;
+  display: inline-block;
+}
+.femmes-teaser-title {
+  font-family: var(--font-head);
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  color: var(--white);
+  margin-bottom: 14px;
+  line-height: 1.25;
+}
+.femmes-teaser-text > p {
+  color: rgba(255,255,255,.75);
+  font-size: 1rem;
+  line-height: 1.75;
+  margin-bottom: 20px;
+  max-width: 560px;
+}
+.femmes-teaser-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+.femmes-teaser-list li {
+  font-size: .92rem;
+  color: rgba(255,255,255,.8);
+}
+@media (max-width: 600px) {
+  .femmes-teaser-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+  }
+  .femmes-teaser-icon { font-size: 3.5rem; }
+  .femmes-teaser-list { align-items: flex-start; }
+}
+
+/* ── Blog — Catégories ──────────────────────────────────────────────────────── */
+.blog-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 52px;
+}
+.blog-cat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green) 100%);
+  border-radius: var(--radius);
+  padding: 28px 32px;
+  text-decoration: none;
+  color: var(--white);
+  transition: var(--transition);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(201,168,76,.2);
+}
+.blog-cat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(201,168,76,.5);
+}
+.blog-cat-icon {
+  font-size: 3rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+.blog-cat-content h3 {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  color: var(--gold);
+  margin-bottom: 8px;
+}
+.blog-cat-content p {
+  font-size: .88rem;
+  color: rgba(255,255,255,.75);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+.blog-cat-arrow {
+  font-size: .85rem;
+  color: var(--gold);
+  font-weight: 600;
+}
+.blog-articles-title {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  color: var(--green);
+  margin-bottom: 28px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--border);
+}
+@media (max-width: 640px) {
+  .blog-categories { grid-template-columns: 1fr; }
+  .blog-cat-card { padding: 22px 20px; gap: 16px; }
+  .blog-cat-icon { font-size: 2.4rem; }
 }
 
 /* ── Omra en famille — Episodes grid ──────────────────────────────────────── */
